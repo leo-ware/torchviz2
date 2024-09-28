@@ -6,18 +6,21 @@ from setuptools import setup, find_packages
 
 VERSION = '0.0.2'
 
-long_description = ""
+with open('README.md', 'r') as f:
+    long_description = f.read()
 
 setup_info = dict(
     # Metadata
-    name='torchviz',
+    name='torchviz2',
     version=VERSION,
-    author='Sergey Zagoruyko',
-    author_email='sergey.zagoruyko@enpc.fr',
-    url='https://github.com/pytorch/pytorchviz',
+    author='Leo Ware',
+    author_email='leoware@gmail.com',
+    
+    # url='https://github.com/pytorch/pytorchviz',
     description='A small package to create visualizations of PyTorch execution graphs',
     long_description=long_description,
-    license='BSD',
+    long_description_content_type="text/markdown",
+    license='MIT',
 
     # Package info
     packages=find_packages(exclude=('test',)),
@@ -26,7 +29,8 @@ setup_info = dict(
 
     install_requires=[
         'torch',
-        'graphviz'
+        'graphviz',
+        'looseversion'
     ]
 )
 
